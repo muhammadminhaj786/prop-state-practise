@@ -1,43 +1,50 @@
-import { useState } from "react";
+import React from 'react'
+import Login from './login'
+import { useState } from 'react'
+import New from './New'
 
-const MyBody = ()=>{
-    //state
-    // let Myname = 'minhaj'
-    // const nameState = useState('minhaj')
-    // let [Myname,setMyname] = nameState
-    const myCourses = ['html','css','js']
-    const [courses,setCourses] = useState(myCourses)
+export default function MyBody( props) {
+  let [isLogedIn,setisLogedIn] = useState(true)
 
-
-    //change state
-    // const changeValue = (e)=>{
-    //     setMyname(e.target.value)
-
-    //     console.log('myname',Myname)
-    // }
-    const addCourse = ()=>{
-        courses.push('react')
-        setCourses([...courses])
-    
-    }
-    console.log(courses)
-    // const nameChange = (e) =>{
-    //     console.log(e.target.value)
-    //     let NameInpState = useState(e.target.value)
-    //     let [NameInp,setNameInp] = NameInpState
-
-    // }
+  function Loged(){
+      setisLogedIn(false)
+  }
+  const bgClr = {
+    backgroundColor: "black",
+    height: '300px',
+    color: 'white'
+  }
+  const bgLight = {
+    backgroundColor: "white",
+    height: '300px',
+    color: 'black'
+  } 
+  let [clrBool,setclrBool] = useState(true)
+  function colorHandler(){
+    setclrBool(false)
+  }
+  function DarkMode (){
     return (
-        <>
-            <button onClick={addCourse}>add courses</button>
-            {/* <h1>{Myname}</h1> */}
-            {/* <button onClick={changeValue}>change</button> */}
-            {/* <input type="text" onChange={(e)=>{changeValue(e)}} /> */}
-            
-
-        </>
-
+      <div style={bgClr}>
+        <h1>Dark Mode</h1>
+      </div>
     )
+  }
+  function LightMode (){
+    return (
+      <div style={bgLight}>
+        <h1>Light Mode</h1>
+      </div>
+    )
+  }
+  return (
+    
+    <div >
+      {clrBool ? <DarkMode /> : <LightMode />}
+      {isLogedIn ? <Login /> : <New />}  
+      <h1>hello {props.value2}</h1>
+      <button onClick={Loged}>Logout</button>
+      <button onClick={colorHandler}>dark mode</button>
+    </div>
+  )
 }
-
-export default MyBody;

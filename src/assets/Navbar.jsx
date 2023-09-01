@@ -1,38 +1,29 @@
+import React from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
+import MyBody from './MyBody';
+import Navbar from './Navbar.css'
+import About from './About'
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
-const MyNavbar = (props) =>{
-    return (
-        <>
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">{props.home}</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    </>
-    )
-} 
-
+function MyNavbar(props) {
+  let Myname = props.value
+  const NavStyle = {
+    height:'20%',
+    width:'100%',
+    border:'2px solid black'
+  }
+  return (
+    <div style={NavStyle}>
+      <div >
+        <ul className="lists">
+          <li>{Myname}</li>
+        </ul>
+      </div>
+      {/* <Routes>
+        <Route path='./'  element={<MyBody />}>Body</Route>
+        <Route path='./About.jsx' element={<About />} >About</Route>  
+      </Routes> */}
+    </div>
+  )
+}
 
 export default MyNavbar
