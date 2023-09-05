@@ -37,6 +37,7 @@ export default function MyBody( props) {
       </div>
     )
   }
+  
   return (
     
     <div >
@@ -44,7 +45,7 @@ export default function MyBody( props) {
       {isLogedIn ? <Login /> : <New />}  
       <h1>hello {props.value2}</h1>
       <button onClick={Loged}>Logout</button>
-      <button onClick={colorHandler}>dark mode</button>
+      <button onClick={colorHandler}>Light mode</button>
     </div>
   )
 }

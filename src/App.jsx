@@ -4,6 +4,8 @@ import MyBody from './assets/MyBody'
 import { Link, Route, Routes } from 'react-router-dom'
 import About from './assets/About'
 import Contact from './assets/Contact'
+import List from './assets/List'
+import Counter from './assets/Counter'
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
       <Route path='/about' Component={About} />
       <Route path='/contact' Component={Contact} />
     </Routes>
+    <div>
+      <List />
+      <Counter />
+    </div>
     
     </div>
   )
