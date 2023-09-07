@@ -6,6 +6,7 @@ import About from './assets/About'
 import Contact from './assets/Contact'
 import List from './assets/List'
 import Counter from './assets/Counter'
+import Form from './assets/Form'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
     <div>
       <List />
       <Counter />
+      <Form />
     </div>
     
     </div>
