@@ -7,6 +7,7 @@ import Contact from './assets/Contact'
 import List from './assets/List'
 import Counter from './assets/Counter'
 import Form from './assets/Form'
+import FetchApi from './assets/FetchApi'
 
 function App() {
   return (

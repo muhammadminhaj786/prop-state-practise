@@ -2,6 +2,7 @@ import React from 'react'
 import Login from './login'
 import { useState } from 'react'
 import New from './New'
+import FetchApi from './FetchApi'
 
 export default function MyBody( props) {
   let [isLogedIn,setisLogedIn] = useState(true)
@@ -46,6 +47,8 @@ export default function MyBody( props) {
       <h1>hello {props.value2}</h1>
       <button onClick={Loged}>Logout</button>
       <button onClick={colorHandler}>Light mode</button>
+      <FetchApi />
+      
     </div>
   )
 }

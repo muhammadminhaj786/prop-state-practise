@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './Button'
 
 const Counter = () => {
+    useEffect(()=>{
+        console.log('componend did mount')
+    },[])
     let [count,setCount] =useState(0)
     function addCount() {
         setCount(++count)
     }
+    useEffect(()=>{
+        console.log("component did updating")
+    },[count])
     function subCount (){
         if( count <=0){
             return 
